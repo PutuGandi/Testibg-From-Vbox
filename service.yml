@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-nginx-pesbuk
+  labels:
+    run: my-nginx-pesbuk
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+    protocol: TCP
+  selector:
+    run: my-nginx-pesbuk

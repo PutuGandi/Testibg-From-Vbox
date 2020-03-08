@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-nginx-pesbuk
+spec:
+  selector:
+    matchLabels:
+      run: my-nginx-pesbuk
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: my-nginx-pesbuk
+    spec:
+      containers:
+      - name: my-nginx-pesbuk
+        image: gandi12/pesbuk-docker:latest
+        ports:
+        - containerPort: 80

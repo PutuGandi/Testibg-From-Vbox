@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pesbuk-deployment
+spec:
+  selector:
+    matchLabels:
+      run: pesbuk-deployment
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: pesbuk-deployment
+    spec:
+      containers:
+      - name: pesbuk-deployment
+        image: gandi12/pesbuk-docker:latest
+        ports:
+        - containerPort: 80
